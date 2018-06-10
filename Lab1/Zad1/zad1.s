@@ -53,17 +53,17 @@ _start:				# start programu
 
 #Wypisz  tekst:
 movq $SYSWRITE, %rax		# przeniesienie wartosci z SYSWRITE do rejestru rax
-movq $STDOUT, %rdi			# systemowe stdout
+movq $STDOUT, %rdi		# systemowe stdout
 movq $author_info, %rsi		# wyswietlanie tekstu o autorze programu
 movq $author_info_len, %rdx	# kopiowanie dlugosci stringa(author_info) do rejstru danych
 syscall	
 
 #Wypisz  string'a:
 movq $SYSWRITE, %rax		# przeniesienie wartosci z SYSWRITE do rejestru rax
-movq $STDOUT, %rdi			# systemowe stdout
-movq $string, %rsi			# kopiowanie wartosci stringa do rejestru źródłowego
+movq $STDOUT, %rdi		# systemowe stdout
+movq $string, %rsi		# kopiowanie wartosci stringa do rejestru źródłowego
 movq $string_len, %rdx		# kopiowanie dlugosci stringa do rejstru danych
-syscall						# wywolanie funkcji systemowych
+syscall				# wywolanie funkcji systemowych
 
 #Wczytywanie wpisanego tekstu
 movq $SYSREAD, %rax		# kopiowanie z wartosci funkcji wejscia do rejstru akumulatora
@@ -108,8 +108,8 @@ movq $textout, %rsi
 movq $BUFLEN, %rdx
 syscall
 #EXIT
-movq $SYSEXIT, %rax			# wykonanie funkcji EXIT
+movq $SYSEXIT, %rax		# wykonanie funkcji EXIT
 movq $EXIT_SUCCESS, %rdi	# Wrzucenie do rejestru kodu wyjscia z programu
-syscall						# zwraca kod bledu w %rdi
+syscall				# zwraca kod bledu w %rdi
 #_______________________________________________________________________________________
 
