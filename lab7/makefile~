@@ -1,0 +1,5 @@
+program1s:	zad7.o
+	ld -o program1s zad7.o
+
+zad7.o:	zad7.s
+	as -gstabs -o zad7.o zad7.s

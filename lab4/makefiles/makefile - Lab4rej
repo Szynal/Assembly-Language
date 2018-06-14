@@ -1,0 +1,5 @@
+lab2:	Lab4rej.o
+	ld -o Lab4rej Lab4rej.o
+
+lab2.o:	Lab4rej.s
+	as -gstabs -o Lab4rej.o Lab4rej.s
